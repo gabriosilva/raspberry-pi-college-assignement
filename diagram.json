@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "author": "Gabrio Lina",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-pi-pico-w",
+      "id": "pico",
+      "top": -3.25,
+      "left": -92.45,
+      "attrs": { "env": "micropython-20231005-v1.21.0" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -99.2,
+      "left": 226.4,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "pico:VBUS", "lcd1:VCC", "red", [ "h125.11", "v19.2", "h19.2" ] ],
+    [ "pico:GND.8", "lcd1:GND", "black", [ "h115.51", "v-9.6" ] ],
+    [ "pico:GP5", "lcd1:SCL", "magenta", [ "h240", "v-105.9" ] ],
+    [ "lcd1:SDA", "pico:GP4", "orange", [ "h-105.6", "v105.8" ] ]
+  ],
+  "dependencies": {}
+}
